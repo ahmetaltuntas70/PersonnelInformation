@@ -13,7 +13,9 @@ tutulmuştur. Yeni bir _LayoutPersonnel (view) oluşturularak Space (template) t
 sayfasındaki kodlarını içine ekledik ve gerekli düzenlemeleri yaptıktan sonra _LayoutPersonnel'e bağlı olarak 
 PersonnelController tarafında oluşturulan denetleyici olarak Index (personel listesi), AddPersonnel (personel ekleme)
 ve FillPersonnel (personel güncelleme ) (views) sayfa görünümlerinden yararlanılarak gerekli kodlar tutulmuştur. 
+
 Proje Ekran Görüntüleri: 
+
 ![1](https://github.com/ahmetaltuntas70/PersonnelInformation/assets/111458472/d1508a68-8613-4629-a8cb-4a69e6a3c63f)
 ![2](https://github.com/ahmetaltuntas70/PersonnelInformation/assets/111458472/cb837fe8-d866-47cf-aa96-9245041639ab)
 ![3](https://github.com/ahmetaltuntas70/PersonnelInformation/assets/111458472/118e9bf2-a0ff-4174-9f5a-0bfb61a465ad)
