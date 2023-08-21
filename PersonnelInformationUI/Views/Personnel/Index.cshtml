@@ -1,0 +1,54 @@
+﻿@using PersonnelInformationEL.Entities
+@model List<Personnel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPersonnel.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h3><font color="#ff0000">PERSONEL LİSTESİ</font></h3>
+<br />
+<table class="table table-hover sortable">
+    <tr>
+        <th>#</th>
+        <th>İSİM</th>
+        <th>SOYİSİM</th>
+        <th>MAİL</th>
+        <th>TCNO</th>
+        <th>CİNSİYET</th>
+        <th>DOĞUM TARİHİ</th>
+        <th>ÖĞRENİM DURUMU</th>
+        <th>MESLEK</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Email</td>
+            <td>@item.TcNo</td>
+            <td>@(item.Gender==true?"Erkek":"Kadın")</td>
+            <td>@item.BirthDate.ToString("dd-MM-yyyy")</td>
+            <td>@(item.Education==true?"Lisans":"ÖnLisans")</td>
+            <td>@item.Job</td>
+            <td class="align-baseline">
+                <a href="/Personnel/DeletePersonnel/@item.ID" class="btn btn-outline-danger" style="margin-right:3px;">
+                    <span class="fa fa-trash"></span>
+                </a>
+                <a href="/Personnel/FillPersonnel/@item.ID" class="btn btn-outline-primary" style="margin-right:3px;">
+                    <span class="fa fa-edit"></span>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div class="form-group">
+    <a href="/Personnel/AddPersonnel" class="btn btn-info" style="background-color:#0094ff; color:white;">Yeni Personel Ekle</a>
+</div>
+
+
+

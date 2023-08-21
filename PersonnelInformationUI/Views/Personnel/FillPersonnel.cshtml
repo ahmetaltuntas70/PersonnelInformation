@@ -1,0 +1,59 @@
+﻿@model PersonnelInformationEL.Entities.Personnel
+
+@{
+    ViewBag.Title = "FillPersonnel";
+    Layout = "~/Views/Shared/_LayoutPersonnel.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h3><font color="#ff0000">PERSONEL GÜNCELLEME</font></h3>
+<br />
+@using (Html.BeginForm("UpdatePersonnel", "Personnel", FormMethod.Post))
+{
+    <div class="form-group col-sm-6 offset-sm-3">
+        @Html.Label("ID:")
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.Label("Personel İsmi:")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel Soyismi:")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel Mail:")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        @Html.Label("Personel TC:")
+        @Html.TextBoxFor(x => x.TcNo, new { @class = "form-control" })
+        <br />
+        <div class="radio">
+            <label>
+                @Html.Label("Personel Cinsiyet:") <br />
+                @Html.RadioButtonFor(x => x.Gender, true) Erkek
+            </label>
+            <label>
+                @Html.RadioButtonFor(x => x.Gender, false) Kadın
+            </label>
+        </div>
+        <br />
+        @Html.Label("Personel Doğum Tarihi:")
+        @Html.TextBoxFor(x => x.BirthDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        <br />
+        <div class="radio">
+            <label>
+                @Html.Label("Personel Öğrenim Durumu:") <br />
+                @Html.RadioButtonFor(x => x.Education, true) Lisans
+            </label>
+            <label>
+                @Html.RadioButtonFor(x => x.Education, false) ÖnLisans
+            </label>
+        </div>
+        <br />
+        @Html.Label("Personel Meslek:")
+        @Html.TextAreaFor(x => x.Job, 1, 1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info" style="background-color:#0094ff; color:white;">Personel Güncelle</button>
+    </div>
+}
+
+
